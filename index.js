@@ -98,7 +98,7 @@ app.post("/register", async (req, res) => {
     const cookie = serialize("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV == "development" ? false : true,
-      sameSite: "strict",
+      sameSite: "none",
       maxAge: 3600 * 24 * 30,
       path: "/",
 
@@ -159,7 +159,7 @@ app.post("/login", async (req, res) => {
     const cookie = serialize("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV == "development" ? false : true,
-      sameSite: "strict",
+      sameSite: "none",
       maxAge: 3600 * 24 * 30,
       path: "/",
 
@@ -227,7 +227,7 @@ app.get("/logout", async (req, res) => {
     const cookie = serialize("token", "", {
       httpOnly: true,
       secure: process.env.NODE_ENV == "development" ? false : true,
-      sameSite: "strict",
+      sameSite: "none",
       maxAge: -1,
       path: "/",
     });
