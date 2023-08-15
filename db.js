@@ -14,4 +14,5 @@ const pool_prod = new Pool({
     connectionString
 });
 
-module.exports = process.env.NODE_ENV === 'production'? pool_prod : pool_dev;
+module.exports = pool_prod
+// module.exports = process.env.NODE_ENV === 'production'? pool_prod : pool_dev;
