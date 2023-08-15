@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const backendUrl=process.env.NEXT_PUBLIC_BACKEND_URL;
+const backendUrl= "https://todo-server-123-4f16fd2da272.herokuapp.com"
 console.log("Backend URL "  , backendUrl);
 
 const axiosInstance = axios.create({
