@@ -192,11 +192,8 @@ app.get('/logout', async (req, res) => {
 
 // To CREATE a new todo.
 
-const privateRoutes = express.Router();
 
-privateRoutes.use(Auth);
-
-privateRoutes.post('/todo', async (req, res) => {
+app.post('/todo', Auth, async (req, res) => {
   try {
     const { description } = req.body;
     const user_email = req.user;
@@ -217,7 +214,7 @@ privateRoutes.post('/todo', async (req, res) => {
 });
 
 // To GET all todos.
-privateRoutes.get('/todo', async (req, res) => {
+app.get('/todo',Auth, async (req, res) => {
   try {
     const user_email = req.user;
 
@@ -231,7 +228,7 @@ privateRoutes.get('/todo', async (req, res) => {
 
 // To GET a specific todo.
 
-privateRoutes.get('/todo/:id', async (req, res) => {
+app.get('/todo/:id', Auth, async (req, res) => {
   try {
     const user_email = req.user;
     const { id } = req.params;
@@ -246,7 +243,7 @@ privateRoutes.get('/todo/:id', async (req, res) => {
 
 //To UPDATE a todo.
 
-privateRoutes.put('/todo/:id', async (req, res) => {
+app.put('/todo/:id', Auth, async (req, res) => {
   try {
     const { id } = req.params;
     const { description } = req.body;
@@ -266,7 +263,7 @@ privateRoutes.put('/todo/:id', async (req, res) => {
 
 // To DELETE a todo.
 
-privateRoutes.delete('/todo/:id', async (req, res) => {
+app.delete('/todo/:id', Auth, async (req, res) => {
   try {
     const { id } = req.params;
     const user_email = req.user;
@@ -282,7 +279,6 @@ privateRoutes.delete('/todo/:id', async (req, res) => {
   }
 });
 
-app.use(privateRoutes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
