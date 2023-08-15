@@ -75,7 +75,7 @@ app.post('/register', async (req, res) => {
     // generate  jwt token
     const token = jwt.sign({ user_email: newUser.rows[0].user_email }, process.env.JWT_SECRET || 'key', { expiresIn: '30d' });
     // create a cookie uusing serialize
-    const cookie = serialize('token', token, { httpOnly: true, secure: process.env.NODE_ENV=='development' ? false : true, sameSite: 'strict', maxAge: 3600*24*30, path: '/', domain:process.env.NODE_ENV=='development' ? 'localhost' : process.env.FRONTEND_BASEURL });
+    const cookie = serialize('token', token, { httpOnly: true, secure: process.env.NODE_ENV=='development' ? false : true, sameSite: 'strict', maxAge: 3600*24*30, path: '/' });
 
     res.setHeader('Set-Cookie', cookie);
 
@@ -120,7 +120,7 @@ app.post('/login', async (req, res) => {
     // generate our jwt token
     const token = jwt.sign({ user_email: user.rows[0].user_email }, process.env.JWT_SECRET || 'key', { expiresIn: '30d' });
     // create a cookie uusing serialize
-    const cookie = serialize('token', token, { httpOnly: true, secure: process.env.NODE_ENV=='development' ? false : true, sameSite: 'strict', maxAge: 3600*24*30, path: '/', domain:process.env.NODE_ENV=='development' ? 'localhost' : process.env.FRONTEND_BASEURL });
+    const cookie = serialize('token', token, { httpOnly: true, secure: process.env.NODE_ENV=='development' ? false : true, sameSite: 'strict', maxAge: 3600*24*30, path: '/' });
 
     res.setHeader('Set-Cookie', cookie);
 
@@ -174,7 +174,7 @@ app.get('/verify', async (req, res) => {
 app.get('/logout', async (req, res) => {
   try {
     // create a cookie uusing serialize
-    const cookie = serialize('token', '', { httpOnly: true, secure: process.env.NODE_ENV=='development' ? false : true, sameSite: 'strict', maxAge: -1, path: '/', domain:process.env.NODE_ENV=='development' ? 'localhost' : process.env.FRONTEND_BASEURL });
+    const cookie = serialize('token', '', { httpOnly: true, secure: process.env.NODE_ENV=='development' ? false : true, sameSite: 'strict', maxAge: -1, path: '/' });
 
     res.setHeader('Set-Cookie', cookie);
 
