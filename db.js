@@ -8,12 +8,10 @@ const pool_dev = new Pool({
     database: "perntodo"
 });
 
+
+const connectionString = process.env.DATABASE_URL;
 const pool_prod = new Pool({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DATABASE_NAME
+    connectionString
 });
 
 module.exports = process.env.NODE_ENV === 'production'? pool_prod : pool_dev;
