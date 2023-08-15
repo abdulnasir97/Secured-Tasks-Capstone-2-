@@ -11,7 +11,10 @@ const pool_dev = new Pool({
 
 const connectionString = process.env.DATABASE_URL;
 const pool_prod = new Pool({
-    connectionString
+    connectionString,
+    ssl: {
+        rejectUnauthorized: false
+      }
 });
 
 module.exports = pool_prod
