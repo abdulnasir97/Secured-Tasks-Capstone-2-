@@ -8,7 +8,7 @@ const { serialize } = require("cookie");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-const frontdomain = "tasks-green";
+const frontdomain = process.env.FRONTEND_ORIGIN;
 
 // Our middleare.
 app.use(
@@ -101,7 +101,7 @@ app.post("/register", async (req, res) => {
       sameSite: "strict",
       maxAge: 3600 * 24 * 30,
       path: "/",
-      domain: frontdomain
+      domain: frontdomain,
     });
 
     res.setHeader("Set-Cookie", cookie);
@@ -162,7 +162,7 @@ app.post("/login", async (req, res) => {
       sameSite: "strict",
       maxAge: 3600 * 24 * 30,
       path: "/",
-      domain: frontdomain
+      domain: frontdomain,
     });
 
     res.setHeader("Set-Cookie", cookie);
@@ -230,7 +230,7 @@ app.get("/logout", async (req, res) => {
       sameSite: "strict",
       maxAge: -1,
       path: "/",
-      domain: frontdomain
+      domain: frontdomain,
     });
 
     res.setHeader("Set-Cookie", cookie);
