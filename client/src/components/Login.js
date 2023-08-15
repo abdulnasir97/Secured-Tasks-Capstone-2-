@@ -36,15 +36,15 @@ export default function Login() {
   return (
     <>
       <div className='container'>
-        <h1 className='text-center mt-5'>Login</h1>
+        <h1 className='text-center mt-5'>Please Login!</h1>
         <form onSubmit={onSubmitForm}>
           <div className='form-group'>
-            <label htmlFor='email'>email</label>
-            <input type='text' className='form-control' id='email' placeholder='Enter email' value={email} onChange={onChangeUsername} />
+            <label htmlFor='email'>Email</label>
+            <input type='text' className='form-control' id='email' placeholder='Enter email.' value={email} onChange={onChangeUsername} />
           </div>
           <div className='form-group'>
             <label htmlFor='password'>Password</label>
-            <input type='password' className='form-control' id='password' placeholder='Password' value={password} onChange={onChangePassword} />
+            <input type='password' className='form-control' id='password' placeholder='Enter password.' value={password} onChange={onChangePassword} />
           </div>
           <div className='text-center'>
             <Button variant='primary' type='submit'>
@@ -53,7 +53,7 @@ export default function Login() {
           </div>
         </form>
         <div className='text-center mt-3'>
-          <Link to='/register'>Register</Link>
+          <Link to='/register'>Sign Up</Link>
         </div>
       </div>
     </>

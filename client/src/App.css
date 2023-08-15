@@ -1,6 +1,27 @@
+/* Register.css */
+.light-grey-background {
+  background-color: #f5f5f5;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Adjust the styles as needed */
+.text-center {
+  text-align: center;
+}
+
+.mt-5 {
+  margin-top: 2rem;
+}
+
+
+
 .App {
   text-align: center;
 }
+
 
 .App-logo {
   height: 40vmin;

@@ -6,16 +6,16 @@ export default function Home() {
   return (
     <Fragment>
       <div className='container'>
-        <h1 className='text-center mt-5'>Welcome to my Todo App</h1>
+        <h1 className='text-center mt-5'>Secured Tasks</h1>
         <div className='text-center mt-5 flex-center'>
           <Link to='/login'>
             <Button variant='primary' className='button'>
-              Login
+              Login!
             </Button>
           </Link>
           <Link to='/register'>
             <Button variant='primary' className='button'>
-              Register
+              Sign Up!
             </Button>
           </Link>
         </div>

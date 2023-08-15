@@ -44,19 +44,19 @@ export default function Register() {
   return (
     <>
       <div className='container'>
-        <h1 className='text-center mt-5'>Register</h1>
+        <h1 className='text-center mt-5'>Please Sign Up!</h1>
         <form onSubmit={onSubmitForm}>
           <div className='form-group'>
             <label htmlFor='name'>Name</label>
-            <input type='text' className='form-control' id='name' placeholder='Enter name' value={name} onChange={onChangeName} />
+            <input type='text' className='form-control' id='name' placeholder='Enter your name.' value={name} onChange={onChangeName} />
           </div>
           <div className='form-group'>
             <label htmlFor='email'>Email</label>
-            <input type='email' className='form-control' id='email' placeholder='Enter email' value={email} onChange={onChangeEmail} />
+            <input type='email' className='form-control' id='email' placeholder='Enter the email.' value={email} onChange={onChangeEmail} />
           </div>
           <div className='form-group'>
             <label htmlFor='password'>Password</label>
-            <input type='password' className='form-control' id='password' placeholder='Password' value={password} onChange={onChangePassword} />
+            <input type='password' className='form-control' id='password' placeholder='Enter the password.' value={password} onChange={onChangePassword} />
           </div>
 
           <div className='text-center'>
