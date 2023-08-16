@@ -26,7 +26,7 @@ This app allows you to create an account using an email and password of your cho
 Simply login or sign up and you will be taken to your personal list. Once there, you can add as many tasks as you would like and edit and delete them as you wish while ensuring only you have access to them.
 
 Technology used:
-This app was creating by using the PERN stack.   The RESTful API was created using the database made in PostgreSQL. 
+This app was creating by using the PERN stack. The RESTful API was created using the database made in PostgreSQL. 
 Express was used to manage the server and routes.
 React was used as the main framework to build the applicaiton. Javascript, HTML, and CSS were used within React. 
 Node Js was also used to run the program and install the necessary dependencies. 
@@ -37,7 +37,9 @@ Node Js was also used to run the program and install the necessary dependencies.
 API Documentation for Secured Tasks App
 Welcome to the API documentation for the Secured Tasks App. This API allows you to manage your tasks with authentication, utilizing JWT tokens for security. Below, you'll find detailed information on the available endpoints, their functionality, and how to interact with them.
 
-Table of Contents
+Table of Contents 
+<br>
+<br>
 Authentication
 Endpoints
 Create a Todo
@@ -47,11 +49,17 @@ Update a Todo
 Delete a Todo
 HTTP Status Codes
 Glossary
+<br>
+<br>
 Authentication
 The API requires authentication using JWT tokens. Tokens should be included in the Authorization header of each request.
+<br>
+<br>
 
 Endpoints
+<br>
 Create a Todo
+<br>
 Endpoint: POST /todo
 Description: Creates a new todo for the authenticated user.
 Request Body:
@@ -60,18 +68,26 @@ Response:
 message: Success message
 todo: Created todo object
 HTTP Status: 200 OK
+<br>
+<br>
 Retrieve All Todos
 Endpoint: GET /todo
 Description: Retrieves all todos for the authenticated user.
 Response:
 todos: Array of todo objects
 HTTP Status: 200 OK
+<br>
+<br>
+
 Retrieve a Todo
 Endpoint: GET /todo/:id
 Description: Retrieves a specific todo by ID for the authenticated user.
 Response:
 todo: Todo object
 HTTP Status: 200 OK
+<br>
+<br>
+
 Update a Todo
 Endpoint: PUT /todo/:id
 Description: Updates a specific todo by ID for the authenticated user.
@@ -81,18 +97,28 @@ Response:
 message: Success message
 todo: Updated todo object
 HTTP Status: 200 OK
+<br>
+<br>
+<br>
+
 Delete a Todo
 Endpoint: DELETE /todo/:id
 Description: Deletes a specific todo by ID for the authenticated user.
 Response:
 message: Success message
 HTTP Status: 200 OK
+<br>
+<br>
+
 HTTP Status Codes
 200 OK: Successful request
 400 Bad Request: Malformed request
 401 Unauthorized: Missing or invalid JWT token
 404 Not Found: Resource not found
 500 Internal Server Error: Server error
+<br>
+<br>
+
 Glossary
 JWT: JSON Web Token, a compact, URL-safe means of representing claims to be transferred between two parties.
 Bcrypt: A password-hashing function designed to be slow and computationally intensive, suitable for securely hashing passwords.
