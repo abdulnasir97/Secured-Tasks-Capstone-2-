@@ -3,13 +3,18 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import axiosInstance from '../utils/axios';
 
+//Register component for user registeration.
 export default function Register() {
+
+  //State to manage the password, email, and name.
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
 
   const navigate = useNavigate();
 
+  //Functions to handle changes in email input.
+  
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
   };
