@@ -4,9 +4,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import axiosInstance from '../utils/axios';
 
+// Login component for user authentication.
+
 export default function Login() {
+
+  // State to manage the user's email and password.
+
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+    // Get the navigation function from react-router-dom.
+
   const navigate = useNavigate();
 
   const onChangeUsername = (e) => {
@@ -16,6 +24,9 @@ export default function Login() {
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
+
+    // Function to handle form submission.
+
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
