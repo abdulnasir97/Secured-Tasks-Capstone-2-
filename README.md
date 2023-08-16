@@ -1,3 +1,38 @@
+Welcome to the Secured Tasks App. 
+
+This app allows you to create an account using an email and password of your choice to be able to create, read, update, and delete your own personalized list of multiple tasks. Each user has their own unique list which stays saved in the app for upto 30 days. Once created, each account stays saved in the app for 30 days as well. 
+
+Simply login or sign up and you will be taken to your personal list. Once there, you can add as many tasks as you would like and edit and delete them as you wish while ensuring only you have access to them. 
+
+Here is the live link:
+https://tasks-green.vercel.app/
+
+The picture below shows the first page once the app is opened.
+
+![1](https://github.com/abdulnasir97/tasks/assets/120065583/dcc17c60-e669-48fd-aa77-32647b6c1bf0)
+
+The picture below shows the login screen.
+
+![2](https://github.com/abdulnasir97/tasks/assets/120065583/5378caa2-c81f-4227-b2ae-8c9e01b0384c)
+
+The picture below shows the sign up screen.
+
+![3](https://github.com/abdulnasir97/tasks/assets/120065583/a841da4e-c27b-42e3-bf3f-be2e826453f4)
+
+The picture below shows the user homepage once logged in, it shows a task already added to show the edit and delete functionality. You can also see the Logout button on the bottom right if user wants to logout so another user can log in.
+
+![4](https://github.com/abdulnasir97/tasks/assets/120065583/2f209fd8-e40e-453f-bb71-6d94cca78e16)
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
