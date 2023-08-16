@@ -10,7 +10,7 @@ const bcrypt = require("bcrypt");
 
 const frontdomain = process.env.FRONTEND_ORIGIN;
 
-// Our middleare.
+// Middleware
 app.use(
   cors({
     origin:
@@ -28,22 +28,23 @@ app.use(express.urlencoded({ extended: true }));
 
 function Auth(req, res, next) {
   try {
-    // get the token from the cookie
+    // Get the token from the cookie.
     const token = req.cookies.token;
 
-    // if we don't have a token then we return false
+    // If we don't have a token, then we return false.
     if (!token) {
       return res.json({
         error: "The user is not authenticated.",
       });
     }
 
-    // verify the token
+    // verify the token.
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET || "key", {
       expiresIn: "30d",
     });
     const { user_email } = decodedToken;
-    // if we have a valid token then we return true
+    
+    // If we have a valid token then we return true.
     if (decodedToken && user_email) {
       req.user = user_email;
       next();
@@ -57,13 +58,14 @@ function Auth(req, res, next) {
   }
 }
 
-// create a register route
+// Create a register route.
 app.post("/register", async (req, res) => {
   try {
-    // destructure the req.body (name, email, password)
+    
+    // Destructure the req.body (name, email, password).
     const { name, email, password } = req.body;
 
-    // check if user exists (if user exists then throw error)
+    // Check if user exists (if user exists then throw error).
     const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
       email,
     ]);
@@ -74,27 +76,28 @@ app.post("/register", async (req, res) => {
       });
     }
 
-    // Bcrypt the user password
-
-    // saltRounds adds 10 layers of hash
+    // Bcrypt the user password.
+    // saltRounds adds 10 layers of hash.
 
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
 
     const bcryptPassword = await bcrypt.hash(password, salt);
-    // enter the new user inside our database
+    
+    // Enter the new user inside our database.
     const newUser = await pool.query(
       "INSERT INTO users (user_name, user_email, user_password) VALUES ($1, $2, $3) RETURNING *",
       [name, email, bcryptPassword]
     );
 
-    // generate  jwt token
+    // Generate a jwt token.
     const token = jwt.sign(
       { user_email: newUser.rows[0].user_email },
       process.env.JWT_SECRET || "key",
       { expiresIn: "30d" }
     );
-    // create a cookie uusing serialize
+    
+    // Create a cookie uusing serialize.
     const cookie = serialize("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV == "development" ? false : true,
@@ -120,13 +123,14 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// create a login route
+// Create a login route.
 app.post("/login", async (req, res) => {
   try {
-    // destructure the req.body (email, password)
+    
+    // Destructure the req.body (email, password).
     const { email, password } = req.body;
 
-    // check if user exists (if user exists then throw error)
+    // Check if user exists (if user exists then throw error).
     const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
       email,
     ]);
@@ -137,7 +141,7 @@ app.post("/login", async (req, res) => {
       });
     }
 
-    // check if incoming password is the same as the database password
+    // Check if incoming password is the same as the database password.
     const isPasswordValid = await bcrypt.compare(
       password,
       user.rows[0].user_password
@@ -149,13 +153,14 @@ app.post("/login", async (req, res) => {
       });
     }
 
-    // generate our jwt token
+    // Generate our jwt token.
     const token = jwt.sign(
       { user_email: user.rows[0].user_email },
       process.env.JWT_SECRET || "key",
       { expiresIn: "30d" }
     );
-    // create a cookie uusing serialize
+    
+    // Create a cookie using serialize.
     const cookie = serialize("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV == "development" ? false : true,
@@ -180,25 +185,27 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// verify token route for the frontend
+// Verify token route for the frontend.
 app.get("/verify", async (req, res) => {
   try {
-    // get the token from the cookie
+    
+    // Get the token from the cookie
     const token = req.cookies.token;
 
-    // if we don't have a token then we return false
+    // If we don't have a token then we return false.
     if (!token) {
       return res.status(401).json({
         error: "The user is not authenticated.",
       });
     }
 
-    // verify the token
+    // Verify the token.
     const decodeToken = jwt.verify(token, process.env.JWT_SECRET || "key", {
       expiresIn: "30d",
     });
     const { user_email } = decodeToken;
-    // if we have a valid token then we return true
+    
+    // If we have a valid token then we return true.
     if (
       decodeToken &&
       user_email &&
@@ -220,10 +227,11 @@ app.get("/verify", async (req, res) => {
   }
 });
 
-// logout route
+// Logout route.
 app.get("/logout", async (req, res) => {
   try {
-    // create a cookie uusing serialize
+    
+    // Create a cookie using serialize.
     const cookie = serialize("token", "", {
       httpOnly: true,
       secure: process.env.NODE_ENV == "development" ? false : true,
