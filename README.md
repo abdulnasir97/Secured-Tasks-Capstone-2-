@@ -32,6 +32,73 @@ React was used as the main framework to build the applicaiton. Javascript, HTML,
 Node Js was also used to run the program and install the necessary dependencies. 
 
 
+
+
+API Documentation for Secured Tasks App
+Welcome to the API documentation for the Secured Tasks App. This API allows you to manage your tasks with authentication, utilizing JWT tokens for security. Below, you'll find detailed information on the available endpoints, their functionality, and how to interact with them.
+
+Table of Contents
+Authentication
+Endpoints
+Create a Todo
+Retrieve All Todos
+Retrieve a Todo
+Update a Todo
+Delete a Todo
+HTTP Status Codes
+Glossary
+Authentication
+The API requires authentication using JWT tokens. Tokens should be included in the Authorization header of each request.
+
+Endpoints
+Create a Todo
+Endpoint: POST /todo
+Description: Creates a new todo for the authenticated user.
+Request Body:
+description: Todo description (string)
+Response:
+message: Success message
+todo: Created todo object
+HTTP Status: 200 OK
+Retrieve All Todos
+Endpoint: GET /todo
+Description: Retrieves all todos for the authenticated user.
+Response:
+todos: Array of todo objects
+HTTP Status: 200 OK
+Retrieve a Todo
+Endpoint: GET /todo/:id
+Description: Retrieves a specific todo by ID for the authenticated user.
+Response:
+todo: Todo object
+HTTP Status: 200 OK
+Update a Todo
+Endpoint: PUT /todo/:id
+Description: Updates a specific todo by ID for the authenticated user.
+Request Body:
+description: Updated todo description (string)
+Response:
+message: Success message
+todo: Updated todo object
+HTTP Status: 200 OK
+Delete a Todo
+Endpoint: DELETE /todo/:id
+Description: Deletes a specific todo by ID for the authenticated user.
+Response:
+message: Success message
+HTTP Status: 200 OK
+HTTP Status Codes
+200 OK: Successful request
+400 Bad Request: Malformed request
+401 Unauthorized: Missing or invalid JWT token
+404 Not Found: Resource not found
+500 Internal Server Error: Server error
+Glossary
+JWT: JSON Web Token, a compact, URL-safe means of representing claims to be transferred between two parties.
+Bcrypt: A password-hashing function designed to be slow and computationally intensive, suitable for securely hashing passwords.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
