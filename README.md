@@ -26,7 +26,7 @@ This app allows you to create an account using an email and password of your cho
 Simply login or sign up and you will be taken to your personal list. Once there, you can add as many tasks as you would like and edit and delete them as you wish while ensuring only you have access to them.
 
 Technology used:
-This app was creating by using the PERN stack. The RESTful API was created using the database made in PostgreSQL. 
+This app was creating by using the PERN stack.   The RESTful API was created using the database made in PostgreSQL. 
 Express was used to manage the server and routes.
 React was used as the main framework to build the applicaiton. Javascript, HTML, and CSS were used within React. 
 Node Js was also used to run the program and install the necessary dependencies. 
