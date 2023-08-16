@@ -1,24 +1,26 @@
-// after authentication, this is the main component
-
-//useNavigate is used to navigate between pages without refreshing the page
-
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListTodos from './ListTodos';
 import InputTodo from './InputTodo';
 import axiosInstance from '../utils/axios';
 
+//Todos component for managing and displaying todos.
 export default function Todos() {
+
+//State to manage user auth status and todos.
   const [auth, setAuth] = React.useState(false);
   const [todos, setTodos] = React.useState([]);
+
+// Get nav function from react-router-dom.
   const navigate = useNavigate();
 
+//useEffect to fetch todos when component mounts.
   useEffect(() => {
     getTodos();
   }, []);
 
 
-  // 
+  // Function to verify user's auth token.
   async function verifyToken() {
     try {
       const response = await axiosInstance.get('/verify');
@@ -30,6 +32,7 @@ export default function Todos() {
     }
   }
 
+  //Function to add a new todo.
   async function addTodo(todo) {
     try {
       const response = await axiosInstance.post('/todo', todo);
@@ -41,6 +44,8 @@ export default function Todos() {
     }
   }
 
+  //Function to remove a todo.
+
   async function removeTodo(id) {
     try {
       const deleteTodo = await axiosInstance.delete(`/todo/${id}`);
@@ -50,6 +55,7 @@ export default function Todos() {
     }
   }
 
+  //Function to fetch todos from the server.
   async function getTodos() {
     try {
       await verifyToken();
@@ -74,7 +80,8 @@ export default function Todos() {
     }
   }
 
-  if (!auth) return <div>loading...</div>;
+  //If user is not authenticated, show loading.
+  if (!auth) return <div>Loading...</div>;
 
   return (
     <>
