@@ -6,12 +6,13 @@ import HomePage from './components/Home';
 import LoginPage from './components/Login';
 import Register from './components/Register';
 
-// Implement your authentication logic here
+// Implement your authentication logic here.
 const isAuthenticated = () => {
   const token = localStorage.getItem('authToken');
   return token !== null;
 };
 
+// PrivateRoute component to handle protected routes.
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Routes>
     {' '}
