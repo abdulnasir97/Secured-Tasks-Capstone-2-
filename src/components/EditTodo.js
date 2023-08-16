@@ -1,11 +1,16 @@
 import React, { Fragment, useState } from 'react';
 
+// EditTodo component that allows editing a todo item.
 const EditTodo = ({ todo, updateTodo }) => {
   const [editTodo, setDescription] = useState(todo);
- 
+
+
+// Function to handle updating the todo's description.
   async function updateDescription(e) {
     e.preventDefault();
-    if (editTodo.description.length < 1) {
+
+// Check if the description is empty before updating.
+if (editTodo.description.length < 1) {
       alert('Description cannot be empty');
       return;
     }
