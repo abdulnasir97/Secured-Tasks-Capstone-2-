@@ -1,9 +1,5 @@
 Secured Tasks App 
 
-This app allows you to create an account using an email and password of your choice to be able to create, read, update, and delete your own personalized list of multiple tasks. Each user has their own unique list which stays saved in the app for upto 30 days. Once created, each account stays saved in the app for 30 days as well. 
-
-Simply login or sign up and you will be taken to your personal list. Once there, you can add as many tasks as you would like and edit and delete them as you wish while ensuring only you have access to them. 
-
 Here is the live link:
 https://tasks-green.vercel.app/
 
@@ -23,14 +19,17 @@ The picture below shows the user homepage once logged in, it shows a task alread
 
 ![4](https://github.com/abdulnasir97/tasks/assets/120065583/2f209fd8-e40e-453f-bb71-6d94cca78e16)
 
+App Summary:
 
+This app allows you to create an account using an email and password of your choice to be able to create, read, update, and delete your own personalized list of multiple tasks. Each user has their own unique list which stays saved in the app for upto 30 days. Once created, each account stays saved in the app for 30 days as well. 
 
+Simply login or sign up and you will be taken to your personal list. Once there, you can add as many tasks as you would like and edit and delete them as you wish while ensuring only you have access to them.
 
-
-
-
-
-
+Technology used:
+This app was creating by using the PERN stack. The RESTful API was created using the database made in PostgreSQL. 
+Express was used to manage the server and routes.
+React was used as the main framework to build the applicaiton. Javascript, HTML, and CSS were used within React. 
+Node Js was also used to run the program and install the necessary dependencies. 
 
 
 # Getting Started with Create React App
