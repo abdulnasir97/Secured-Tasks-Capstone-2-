@@ -1,5 +1,6 @@
 Secured Tasks App 
-
+<br>
+<br>
 Here is the live link:
 https://tasks-green.vercel.app/
 
@@ -20,34 +21,60 @@ The picture below shows the user homepage once logged in, it shows a task alread
 ![4](https://github.com/abdulnasir97/tasks/assets/120065583/2f209fd8-e40e-453f-bb71-6d94cca78e16)
 
 App Summary:
-
+<br>
 This app allows you to create an account using an email and password of your choice to be able to create, read, update, and delete your own personalized list of multiple tasks. Each user has their own unique list which stays saved in the app for upto 30 days. Once created, each account stays saved in the app for 30 days as well. 
 
 Simply login or sign up and you will be taken to your personal list. Once there, you can add as many tasks as you would like and edit and delete them as you wish while ensuring only you have access to them.
+<br>
+<br>
+<br>
+<br>
 
 Technology used:
 This app was creating by using the PERN stack. The RESTful API was created using the database made in PostgreSQL. 
 Express was used to manage the server and routes.
 React was used as the main framework to build the applicaiton. Javascript, HTML, and CSS were used within React. 
 Node Js was also used to run the program and install the necessary dependencies. 
+<br>
+<br>
+<br>
+<br>
 
 
 
 
 API Documentation for Secured Tasks App
 Welcome to the API documentation for the Secured Tasks App. This API allows you to manage your tasks with authentication, utilizing JWT tokens for security. Below, you'll find detailed information on the available endpoints, their functionality, and how to interact with them.
+<br>
+<br>
 
 Table of Contents 
 <br>
 <br>
 Authentication
+<br>
+
 Endpoints
+<br>
+
 Create a Todo
+<br>
+
 Retrieve All Todos
+<br>
+
 Retrieve a Todo
+<br>
+
 Update a Todo
+<br>
+
 Delete a Todo
+<br>
+
 HTTP Status Codes
+<br>
+
 Glossary
 <br>
 <br>
@@ -60,53 +87,94 @@ Endpoints
 <br>
 Create a Todo
 <br>
+<br>
 Endpoint: POST /todo
+<br>
 Description: Creates a new todo for the authenticated user.
+<br>
+
 Request Body:
+<br>
+
 description: Todo description (string)
+<br>
+
 Response:
+<br>
+
 message: Success message
+<br>
+
 todo: Created todo object
+<br>
+
 HTTP Status: 200 OK
 <br>
 <br>
 Retrieve All Todos
-Endpoint: GET /todo
-Description: Retrieves all todos for the authenticated user.
-Response:
-todos: Array of todo objects
-HTTP Status: 200 OK
 <br>
 <br>
 
-Retrieve a Todo
-Endpoint: GET /todo/:id
-Description: Retrieves a specific todo by ID for the authenticated user.
+Endpoint: GET /todo
+<br>
+Description: Retrieves all todos for the authenticated user.
+<br>
 Response:
+<br>
+todos: Array of todo objects
+<br>
+HTTP Status: 200 OK
+<br>
+<br>
+Retrieve a Todo
+<br>
+Endpoint: GET /todo/:id
+<br>
+Description: Retrieves a specific todo by ID for the authenticated user.
+<br>
+Response:
+<br>
 todo: Todo object
+<br>
 HTTP Status: 200 OK
 <br>
 <br>
 
 Update a Todo
+<br>
+<br>
 Endpoint: PUT /todo/:id
+<br>
 Description: Updates a specific todo by ID for the authenticated user.
+<br>
 Request Body:
+<br>
 description: Updated todo description (string)
+<br>
 Response:
+<br>
 message: Success message
+<br>
 todo: Updated todo object
+<br>
 HTTP Status: 200 OK
 <br>
 <br>
 <br>
 
 Delete a Todo
+<br>
+<br>
 Endpoint: DELETE /todo/:id
+<br>
 Description: Deletes a specific todo by ID for the authenticated user.
+<br>
 Response:
+<br>
 message: Success message
+<br>
 HTTP Status: 200 OK
+<br>
 <br>
 <br>
 
