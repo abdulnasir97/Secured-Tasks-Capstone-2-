@@ -1,9 +1,21 @@
 import React, { useState } from 'react';
+
+
+// InputTodo component for adding new todos.
+
 const InputTodo = ({ addTodo }) => {
+
+    // State to manage the input field's value (todo description).
+
   const [description, setDescription] = useState('');
+
+    // Function to add a new todo.
 
   function addNewTodo(e) {
     e.preventDefault();
+
+  // Check if the description is not empty before adding.
+
     if(description.length < 1) return alert('Please enter a todo.');
     addTodo({
       description,
