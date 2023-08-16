@@ -1,4 +1,4 @@
-Welcome to the Secured Tasks App. 
+Secured Tasks App 
 
 This app allows you to create an account using an email and password of your choice to be able to create, read, update, and delete your own personalized list of multiple tasks. Each user has their own unique list which stays saved in the app for upto 30 days. Once created, each account stays saved in the app for 30 days as well. 
 
