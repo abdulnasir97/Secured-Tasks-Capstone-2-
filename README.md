@@ -1,6 +1,10 @@
 Secured Tasks App 
 <br>
 <br>
+App Summary:
+<br>
+This app allows you to create an account using an email and password of your choice to be able to create, read, update, and delete your own personalized list of multiple tasks. Each user has their own unique list which stays saved in the app for upto 30 days. Once created, each account stays saved in the app for 30 days as well. <br>
+<br><br>
 Here is the live link:
 https://tasks-green.vercel.app/
 
